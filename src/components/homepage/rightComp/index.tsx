@@ -1,5 +1,5 @@
 import { useEffect, useState} from "react"
-import {motion} from 'framer-motion'
+import {AnimatePresence, motion} from 'framer-motion'
 import LoadingBars from "../../loadingBars"
 
 const RightComp = ({urlImage}:{urlImage:string}) => {
@@ -12,6 +12,7 @@ const RightComp = ({urlImage}:{urlImage:string}) => {
     }, [urlImage])
     return (
         <>
+        <AnimatePresence mode="wait">
         {isLoading ? (
             <aside className="w-[70%]">
             <motion.img src={urlImage} alt=""
@@ -38,6 +39,7 @@ const RightComp = ({urlImage}:{urlImage:string}) => {
         ): (
             <LoadingBars />
         )}
+        </AnimatePresence>
         </>
     )
 }

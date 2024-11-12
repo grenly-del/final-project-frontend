@@ -1,6 +1,5 @@
-import React, { ReactNode, useEffect, useState } from 'react';
+import React, { ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
 
 interface PageTransitionProps {
   children: ReactNode;
@@ -37,6 +36,7 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
         animate={{ scaleY: 0 }}
         exit={{ scaleY: 1 }}
         transition={{
+          delay: 5,
           duration: 0.5,
           ease: [0.22, 1, 0.36, 1],
         }}
@@ -47,7 +47,7 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.3,delay: 5 }}
       >
         {children}
       </motion.div>
@@ -59,6 +59,7 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
         animate={{ scaleY: 0 }}
         exit={{ scaleY: 0 }}
         transition={{
+          delay: 5,
           duration: 1.5,
           ease: [0.22, 1, 0.36, 1],
         }}
