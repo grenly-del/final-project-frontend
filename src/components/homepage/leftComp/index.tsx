@@ -5,6 +5,31 @@ import LoadingBars from "../../loadingBars";
 import type { HomeType } from "../../../pages/homepage";
 
 
+const animasiBtnVarians = {
+    initial: {
+      x: '-500%',
+      opacity: 0
+    },
+    animate: {
+      x: '0%',
+      opacity: 1,
+      scale: [1, 1.15, 1]
+    }
+  };
+  
+const transitionSettings = {
+    x: {
+      duration: 0.2,
+      delay: 0.2,
+      type: 'spring'
+    },
+    scale: {
+      delay: 1,
+      duration: 1.5,
+      repeat: Infinity,
+      repeatType: 'mirror'
+    }
+  };
 
 
 
@@ -116,40 +141,20 @@ const LeftComp = ({nilai}:{nilai:HomeType}) => {
                 >{data.paragraph}</motion.p>
                 <div className="flex gap-16 mt-10">
                     <motion.div 
-                    initial={{
-                        x:'-100%',
-                        opacity: '0%'
-                    }}
+                    variants={animasiBtnVarians}
+                    initial="initial"
 
-                    animate={{
-                        x: '0%',
-                        opacity: '100%'
-                    }}
+                    animate="animate"
 
-                    transition={{
-                        duration: 0.2,
-                        delay: 0.7,
-                        type:'spring'
-                    }}
+                    transition={transitionSettings}
                     >
                         <NavLink to="#" className={'bg-gradient-to-r from-firstColor to-secondColor px-5 py-2 rounded-full text-center transition-all duration-1000 text-white hover:from-secondColor hover:to-firstColor'}>{data.button_1}</NavLink>
                     </motion.div>
                     <motion.div 
-                     initial={{
-                        x:'-100%',
-                        opacity: '0%'
-                    }}
-
-                    animate={{
-                        x: '0%',
-                        opacity: '100%'
-                    }}
-
-                    transition={{
-                        duration: 0.2,
-                        delay: 0.8,
-                        type:'spring'
-                    }}
+                    variants={animasiBtnVarians}
+                    initial="initial"
+                    animate="animate"
+                    transition={transitionSettings}
                     >
                         <NavLink to="E" className={'bg-gradient-to-r from-firstColor to-secondColor px-5 py-2 rounded-full text-center transition-all duration-1000 text-white hover:from-secondColor hover:to-firstColor'}>{data.button_2}</NavLink>
                     </motion.div>
