@@ -3,7 +3,7 @@ import RightComp from "../../components/contact/rightComp"
 
 const ContactPage = () => {
     return (
-        <section className="w-full h-[100vh] flex items-center px-20">
+        <section className="w-full h-[100vh] flex items-center px-20 relative">
             <main className="flex w-full h-full justify-between ">
                 <LeftComp/>
                 <RightComp />

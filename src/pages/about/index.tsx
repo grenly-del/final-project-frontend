@@ -3,7 +3,7 @@ import RightComp from "../../components/about/rightComp"
 
 const AboutPage = () => {
     return (
-        <section className="flex px-20 gap-10 justify-between">
+        <section className="flex px-20 gap-10 justify-between relative">
             <LeftComp />
             <RightComp />
         </section>

@@ -1,4 +1,5 @@
 const LeftComp = () => {
+
     return (
         <aside className="w-[100%%] relative h-[100vh] flex items-center">
             <main className="">

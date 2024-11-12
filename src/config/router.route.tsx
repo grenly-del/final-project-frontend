@@ -9,7 +9,7 @@ import Header from '../components/header'
 const AppRoutes = () => {
     const location:Location = useLocation()
     return (
-        <AnimatePresence mode='wait' initial={true}>
+        <AnimatePresence mode='wait' initial={false}>
                 <Header />
                 <Routes location={location} key={location.pathname}>
                     <Route
