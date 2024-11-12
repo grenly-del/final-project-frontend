@@ -12,7 +12,7 @@ const RightComp = ({urlImage}:{urlImage:string}) => {
     }, [urlImage])
     return (
         <>
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
         {isLoading ? (
             <aside className="w-[70%]">
             <motion.img src={urlImage} alt=""
@@ -26,8 +26,9 @@ const RightComp = ({urlImage}:{urlImage:string}) => {
             }}
 
             transition={{
-                duration: 1,
-                delay: 1
+                duration: 2,
+                type: 'spring',
+                delay: 1.8
             }}
             />
             

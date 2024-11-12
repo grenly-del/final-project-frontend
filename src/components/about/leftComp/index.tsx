@@ -1,6 +1,8 @@
 import type { LeftType } from "../../../pages/about"
 import { useEffect, useState } from "react"
 import LoadingBars from "../../loadingBars"
+import {AnimatePresence, motion} from 'framer-motion'
+import { animasiBtnVarians, bouncing, leftBouncing, transitionSettings } from "../../../config/animation";
 interface LeftCompProps {
     data?: LeftType; // Tambahkan ? agar bisa undefined
 }
@@ -19,14 +21,61 @@ const LeftComp:React.FC<LeftCompProps> = ({data}) => {
 
     return (
         <>
+        <AnimatePresence>
         {!isLoading && getData ? (
             <aside className="w-[100%%] relative h-[100vh] flex items-center">
-                <main className="">
-                    <p>{getData.name}</p>
-                    <h2 className="font-bold text-5xl">{getData.title.first} <span className="bg-gradient-to-r from-secondColor to-firstColor bg-clip-text text-transparent">{getData.title.second}</span></h2>
-                    <p className="font-light mt-6">{getData.paragraph}</p>
-                    <div className="mt-16">
-                        <a href="#" className="bg-gradient-to-r from-firstColor to-secondColor py-2 px-6 rounded-full text-white">{getData.button}</a>
+                <main>
+                    <motion.p
+                    variants={bouncing}
+                    animate="animate"
+                    transition={{
+                        duration: 0.5,
+                        bounce: true
+                    }}
+                    >{getData.name}</motion.p>
+                    <motion.h2 
+                    className="font-bold text-5xl"
+                    variants={leftBouncing}
+                    initial="initial"
+                    animate="animate"
+                    transition={{
+                        duration:0.4,
+                        delay: 0.5
+                    }}
+                    >{getData.title.first} <span className="bg-gradient-to-r from-secondColor to-firstColor bg-clip-text text-transparent">{getData.title.second}</span>
+                    
+                    
+                    </motion.h2>
+                    <motion.p className="font-light mt-6"
+                    initial="initial"
+                    variants={leftBouncing}
+                    animate="animate"
+                    transition={{
+                        x: {
+                            duration: 0.4,
+                            delay: 0.7,
+                        },
+                        opacity: {
+                            duration: 0.2
+                        }
+                    }}
+                    
+                    >{getData.paragraph}</motion.p>
+                    <div className="mt-16 flex">
+                        <motion.div 
+                        style={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            borderRadius: "10px"
+                        }}
+                        variants={animasiBtnVarians}
+                        initial="initial"
+                        animate="animate"
+                        transition={transitionSettings}
+                        >
+                            <a href="#" className="btn-style">{getData.button}</a>
+                        </motion.div>
                     </div>
                 </main>
             </aside>
@@ -34,6 +83,7 @@ const LeftComp:React.FC<LeftCompProps> = ({data}) => {
 
             <LoadingBars />
         )}
+        </AnimatePresence>
         </>
     )
 }

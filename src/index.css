@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .text-shadow {
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2) ;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-style {
+  @apply bg-gradient-to-r from-firstColor to-secondColor py-2 px-6 rounded-full text-white hover:from-secondColor hover:to-firstColor;
 }

@@ -3,33 +3,8 @@ import {AnimatePresence, motion} from 'framer-motion'
 import { useEffect, useState} from "react";
 import LoadingBars from "../../loadingBars";
 import type { HomeType } from "../../../pages/homepage";
+import { animasiBtnVarians, transitionSettings, leftBouncing, fadeLeft, bouncing, textTransisi, textTransisiSettings } from "../../../config/animation";
 
-
-const animasiBtnVarians = {
-    initial: {
-      x: '-500%',
-      opacity: 0
-    },
-    animate: {
-      x: '0%',
-      opacity: 1,
-      scale: [1, 1.15, 1]
-    }
-  };
-  
-const transitionSettings = {
-    x: {
-      duration: 0.2,
-      delay: 0.2,
-      type: 'spring'
-    },
-    scale: {
-      delay: 1,
-      duration: 1.5,
-      repeat: Infinity,
-      repeatType: 'mirror'
-    }
-  };
 
 
 
@@ -42,29 +17,6 @@ const LeftComp = ({nilai}:{nilai:HomeType}) => {
         button_2: ''
     })
     const [isLoading, setIsLoading] = useState(true)
-
-    const fadeLeft = {
-        initial: {
-            x: '-50%',
-            opacity: '0%'
-        },
-        animate: {
-            x: '0%',
-            opacity: '100%'
-        }
-    }
-    const bouncing = {
-        
-        animate: {
-            y: ['-100%', '-5%', '20%', '0%', '10%', '0%']
-        }
-    }
-
-    const leftBouncing = {
-        animate:{
-            x: ['-100%', '-2%', '2%', '0%'],
-        },
-    }
    
     
 
@@ -112,18 +64,14 @@ const LeftComp = ({nilai}:{nilai:HomeType}) => {
                     <motion.span 
                     className="bg-gradient-to-r from-firstColor to-secondColor bg-clip-text text-transparent"
                     style={{
-                        backgroundSize: '200% 100%'
+                        backgroundSize: '200% 200%'
                     }}
+                    variants={textTransisi}
                     animate={{
                         backgroundPosition:  ['0% 50%', '100% 50%', '0% 0%']
                     }}
 
-                    transition={{
-                        duration:2,
-                        repeat: Infinity,
-                        // repeatType: 'reverse',
-                        ease: 'linear'
-                    }}
+                    transition={textTransisiSettings}
 
                     >{data.subtitle.second}
                     
