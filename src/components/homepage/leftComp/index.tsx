@@ -7,7 +7,6 @@ import { animasiBtnVarians, transitionSettings, leftBouncing, fadeLeft, bouncing
 
 
 
-
 const LeftComp = ({nilai}:{nilai:HomeType}) => {
     const [data, setData] = useState<HomeType>({
         subtitle: {first: '', second: '', third: ''},

@@ -74,3 +74,25 @@ export const fadeRigth = {
     opacity: 1
   }
 }
+
+export const fadeRightSkills = {
+  initial: {
+    x: '600%',
+    opacity: 0
+    
+  },
+  animate: {
+    x: '0%',
+    opacity: 1,
+    y: ['5%', '0%', '3%'],
+  }
+}
+
+
+export const infinityLeft = {
+  animate: {
+    x: ['0%', '60%', '0%', '60%', '0%']
+  }
+}
+
+

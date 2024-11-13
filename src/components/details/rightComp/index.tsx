@@ -1,49 +1,77 @@
-const RightComp = () => {
+import { AnimatePresence, motion } from "framer-motion"
+import { fadeRightSkills, fadeRigth } from "../../../config/animation"
+import type { RightType } from "../../../pages/details"
+import {useState, useEffect} from 'react'
+import LoadingBars from "../../loadingBars"
+
+interface RightCompProps {
+    data?: RightType
+}
+
+const RightComp:React.FC<RightCompProps> = ({data}) => {
+    const [getData, setData] = useState<RightType | null>(null); // Mulai dengan `null` agar mudah mendeteksi perubahan
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        console.log(data)
+        if (data != undefined) {
+            setData(data); // Set data baru yang diterima dari parent
+            setIsLoading(false); // Set isLoading ke false jika data tersedia
+        }
+    }, [data]);
     return (
-        <aside className="w-full">
-            <main className="mt-20">
-                <h1 className="text-2xl font-bold">Skills</h1>
-                <p>These are all skills that I learned in the field of technology.</p>
-                <section className="grid grid-cols-5 gap-y-6 mt-7">
-                    <div>
-                        <img src="./utils/html.svg" alt="HTML" />
-                    </div>
-                    <div>
-                        <img src="./utils/css.svg" alt="CSS" />
-                    </div>
-                    <div>
-                        <img src="./utils/js.svg" alt="Javascript" />
-                    </div>
-                    <div>
-                        <img src="./utils/mongodb.svg" alt="MongoDB" />
-                    </div>
-                    <div>
-                        <img src="./utils/nginx.svg" alt="NGINX" />
-                    </div>
-                    <div>
-                        <img src="./utils/nodejs.svg" alt="NodeJS" />
-                    </div>
-                    <div>
-                        <img src="./utils/python.svg" alt="Python" />
-                    </div>
-                    <div>
-                        <img src="./utils/react.svg" alt="React" />
-                    </div>
-                    <div>
-                        <img src="./utils/ts.svg" alt="Typescript" />
-                    </div>
-                    <div>
-                        <img src="./utils/photoshop.svg" alt="Photoshop" />
-                    </div>
-                    <div>
-                        <img src="./utils/drawio.svg" alt="DrawIO" />
-                    </div>
-                    <div>
-                        <img src="./utils/mysql.svg" alt="MySQL" />
-                    </div>
-                </section>
-            </main>
-        </aside>
+        <AnimatePresence>
+            {!isLoading? (
+                <aside className="w-full">
+                <main className="mt-20">
+                    <motion.h1 className="text-2xl font-bold"
+                    variants={fadeRigth}
+                    initial="initial"
+                    animate="animate"
+                    transition={{
+                        delay: 0.6
+                    }}
+                    >{getData?.subtitle}</motion.h1>
+                    <motion.p
+                    variants={fadeRigth}
+                    initial="initial"
+                    animate="animate"
+                    transition={{
+                        delay: 0.8
+                    }}
+                    >{getData?.desc}</motion.p>
+                    <section className="grid grid-cols-5 gap-y-10 mt-7">
+                        {getData?.skills.map((el, index) => (
+                            <motion.div key={index} className="w-full"
+                            variants={fadeRightSkills}
+                            initial="initial"
+                            animate="animate"
+                            transition={{
+                                x:{
+                                    delay: 1 + index * 0.4
+                                },
+                                y: {
+                                    delay: 1.5 + index * 0.4,
+                                    duration: 3,
+                                    repeat: Infinity,
+                                    repeatType: 'mirror'    
+                                },
+                                
+                            }}
+                            >
+                                <div>
+                                    <img src={el.image} alt={el.title} />
+                                </div>
+                            </motion.div>
+                        ))}
+                
+                    </section>
+                </main>
+            </aside>
+            ): (
+                <LoadingBars/>
+            )}
+        </AnimatePresence>
     )
 }
 

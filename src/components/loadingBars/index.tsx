@@ -1,6 +1,5 @@
-import {motion, AnimatePresence} from 'framer-motion'
-import { AiOutlineLoading } from "react-icons/ai";
-
+import {AnimatePresence} from 'framer-motion'
+import {RiseLoader } from 'react-spinners';
 const LoadingBars = () => {
     
     return (
@@ -18,17 +17,8 @@ const LoadingBars = () => {
                     right: '0'
                 }}
             >
-               
-                    <motion.div
-                        animate={{ rotate: 360 }} // Rotasi penuh pada ikon
-                        transition={{
-                            duration: 1,
-                            ease: "linear",
-                            repeat: Infinity
-                        }}
-                    >
-                        <AiOutlineLoading size={100} />
-                    </motion.div>
+               <RiseLoader color="#0824EF" />
+                    
                 
             </div>
             </AnimatePresence>
