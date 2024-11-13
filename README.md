@@ -4,3 +4,4 @@ ini adalah project akhir saya di class frontend. Di website ini saya membuat per
 1. React JS
 2. TailwindCSS
 3. Javascript
+4. Framer Motion ( Framework Animasi )
