@@ -63,3 +63,14 @@ export const textTransisiSettings = {
     ease: 'linear'
 }
 
+
+export const fadeRigth = {
+  initial: {
+    x: '500%',
+    opacity: 0
+  },
+  animate: {
+    x: '0%',
+    opacity: 1
+  }
+}
