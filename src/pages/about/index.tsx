@@ -17,10 +17,12 @@ export interface LeftType {
     button: string,
 }
 
+
+
 export interface RightType {
     desc: string,
     subtitle: string,
-    education: any,
+    education?: any,
 }
 
 

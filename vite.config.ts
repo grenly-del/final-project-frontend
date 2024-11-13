@@ -7,5 +7,8 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: 3002
-  }
+  },
+  build: {
+    chunkSizeWarningLimit: 1000, // Mengubah batas ukuran chunk menjadi 1000 kB
+  },
 })
