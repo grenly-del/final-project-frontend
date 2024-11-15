@@ -60,7 +60,6 @@ const DetailsPage = () => {
                 <LeftComp data={leftData}/>
                 <RightComp data={rightData}/>
             </section>
-            <ProjectComp />
         </section>
     )
 }

@@ -95,7 +95,7 @@ const LeftComp = ({nilai}:{nilai:HomeType}) => {
 
                     transition={transitionSettings}
                     >
-                        <NavLink to="#" className={'bg-gradient-to-r from-firstColor to-secondColor px-5 py-2 rounded-full text-center transition-all duration-1000 text-white hover:from-secondColor hover:to-firstColor'}>{data.button_1}</NavLink>
+                        <a href="/contact" className={'bg-gradient-to-r from-firstColor to-secondColor px-5 py-2 rounded-full text-center transition-all duration-1000 text-white hover:from-secondColor hover:to-firstColor'}>{data.button_1}</a>
                     </motion.div>
                     <motion.div 
                     variants={animasiBtnVarians}
@@ -103,7 +103,7 @@ const LeftComp = ({nilai}:{nilai:HomeType}) => {
                     animate="animate"
                     transition={transitionSettings}
                     >
-                        <NavLink to="E" className={'bg-gradient-to-r from-firstColor to-secondColor px-5 py-2 rounded-full text-center transition-all duration-1000 text-white hover:from-secondColor hover:to-firstColor'}>{data.button_2}</NavLink>
+                        <a href="/about" className={'bg-gradient-to-r from-firstColor to-secondColor px-5 py-2 rounded-full text-center transition-all duration-1000 text-white hover:from-secondColor hover:to-firstColor'}>{data.button_2}</a>
                     </motion.div>
                 </div>
             </main>

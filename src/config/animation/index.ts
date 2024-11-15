@@ -9,9 +9,12 @@ export const fadeLeft = {
     }
 }
 export const bouncing = {
-    
+    initial: {
+      opacity: 0
+    },
     animate: {
-        y: ['-100%', '-5%', '20%', '0%', '10%', '0%']
+        y: ['-100%', '-5%', '20%', '0%', '10%', '0%'],
+        opacity: 1
     }
 }
 

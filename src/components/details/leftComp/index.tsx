@@ -72,7 +72,7 @@ const DetailsComp:React.FC<LeftCompProps> = ({data}) => {
                             transition={transitionSettings}
                             >
 
-                            <a href="#" className="text-white px-6 py-2 bg-gradient-to-r from-firstColor to-secondColor rounded-full">{getData?.button}</a>
+                            <a href="/contact" className="text-white px-6 py-2 bg-gradient-to-r from-firstColor to-secondColor rounded-full">{getData?.button}</a>
 
                             </motion.div>
                         </div>

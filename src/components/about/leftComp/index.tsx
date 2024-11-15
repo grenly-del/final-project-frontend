@@ -74,7 +74,7 @@ const LeftComp:React.FC<LeftCompProps> = ({data}) => {
                         animate="animate"
                         transition={transitionSettings}
                         >
-                            <a href="#" className="btn-style">{getData.button}</a>
+                        <a href="/details" className="btn-style">{getData.button}</a>
                         </motion.div>
                     </div>
                 </main>

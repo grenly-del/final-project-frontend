@@ -3,6 +3,7 @@ import RightComp from "../../components/about/rightComp"
 import {useEffect, useState} from 'react'
 import { getDatabase, onValue,ref } from "firebase/database"
 import app from '../../config/firebase'
+import ProjectComp from "../../components/details/projects"
 
 // Type 
 interface SubTitle {

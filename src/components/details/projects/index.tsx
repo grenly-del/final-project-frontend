@@ -8,19 +8,19 @@ const ProjectComp = () => {
                         <img src="./images/portfolio.svg" alt="" className="w-full h-[271px]"/>
                         <h3 className="text-lg font-bold ml-5 mt-5">Portfolio Pribadi</h3>
                         <p className="text-sm ml-5 w-[287px] mb-5">Ini adalah project latihan saya dalam Frontend Developer</p>
-                        <a href="#" className="text-sm ml-5 w-[287px] text-firstColor">{'Selengkapnya >>'}</a>
+                        
                     </div>
                     <div>
                         <img src="./images/personal-gallery.svg" alt=""  className="w-full h-[271px]"/>
                         <h3 className="text-lg font-bold ml-5 mt-5">Personal Gallery</h3>
                         <p className="text-sm ml-5 w-[287px] mb-5">Ini adalah aplikasi pertama saya untuk membuat aplikasi yang fullstack.</p>
-                        <a href="#" className="text-sm ml-5 w-[287px] text-firstColor">{'Selengkapnya >>'}</a>
+                        
                     </div>
                     <div>
                         <img src="./images/api-authentikasi.svg" alt=""  className="w-full h-[271px]"/>
                         <h3 className="text-lg font-bold ml-5 mt-5">API Authentication</h3>
                         <p className="text-sm ml-5 w-[287px] mb-5">Ini adalah salah satu real project saya, membuat API khusus untuk autentikasi di E-Commerce.</p>
-                        <a href="#" className="text-sm ml-5 w-[287px] text-firstColor">{'Selengkapnya >>'}</a>
+                        
                     </div>
                 </section>
             </main>

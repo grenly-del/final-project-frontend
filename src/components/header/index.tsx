@@ -37,7 +37,7 @@ const Header = () => {
                      <ul className="w-[250px] [&>li]:my-2 flex flex-col gap-y-10 rounded-lg text-center bg-[rgba(255,255,255,.8)] shadow-md shadow-[rgba(0,0,0,.1)]">
                          <li><a href="/" className="transition-all duration-200 ease-in-out hover:bg-slate-300 w-full block py-2">Home</a></li>
                          <li><a href="/about" className="transition-all duration-200 ease-in-out hover:bg-slate-300 w-full block py-2">Education</a></li>
-                         <li><a href="/details" className="transition-all duration-200 ease-in-out hover:bg-slate-300 w-full block py-2">About</a></li>
+                         <li><a href="/details" className="transition-all duration-200 ease-in-out hover:bg-slate-300 w-full block py-2">Skills</a></li>
                          <li><a href="/contact" className="transition-all duration-200 ease-in-out hover:bg-slate-300 w-full block py-2">Contact</a></li>
                      </ul>
                  </div>
