@@ -34,7 +34,7 @@ const LeftComp = ({nilai}:{nilai:HomeType}) => {
 
     return (
         <AnimatePresence initial={true}>
-        <aside className="w-full">
+        <aside>
             {!isLoading? (
                 <main>
                 <motion.p 

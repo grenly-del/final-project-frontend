@@ -14,8 +14,8 @@ const RightComp = ({urlImage}:{urlImage:string}) => {
         <>
         <AnimatePresence>
         {isLoading ? (
-            <aside className="w-[70%]">
-            <motion.img src={urlImage} alt=""
+            <aside className="w-[50%]">
+            <motion.img src={urlImage} alt="" className="w-full"
             initial={{
                 scale: 0,
                 opacity: '0%'
